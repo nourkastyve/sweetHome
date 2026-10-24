@@ -64,7 +64,7 @@ public partial class MainPage : ContentPage
         { await DisplayAlert("Montants incorrects", "Le prix doit être positif et l'acompte compris entre 0 et le prix total.", "OK"); return; }
         var order = new CakeOrder { CustomerName = _nameEntry.Text.Trim(), Phone = _phoneEntry.Text.Trim(),
             CakeName = _cakePicker.SelectedItem.ToString()!, Size = _sizePicker.SelectedItem?.ToString() ?? "Moyen",
-            MessageOnCake = _messageEntry.Text?.Trim() ?? "", DeliveryDate = _datePicker.Date, TotalPrice = total,
+            MessageOnCake = _messageEntry.Text?.Trim() ?? "", DeliveryDate = _datePicker.Date ?? DateTime.Today, TotalPrice = total,
             Deposit = deposit, Status = "Nouvelle commande" };
         _orders.Insert(0, order); await OrderStorage.SaveAsync(_orders);
         await DisplayAlert("Commande enregistrée", $"Commande de {order.CustomerName} enregistrée. Reste à payer : {order.Remaining:N0} FCFA.", "OK");
