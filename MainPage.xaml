@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SweetHome.MainPage" Title="SweetHome">
+  <Grid RowDefinitions="Auto,*" BackgroundColor="{StaticResource Cream}">
+    <VerticalStackLayout Grid.Row="0" Padding="20,16,20,12" Spacing="4">
+      <Label Text="SweetHome" FontSize="30" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+      <Label Text="La douceur, organisée avec soin." FontSize="14" />
+      <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8" Margin="0,12,0,0">
+        <Button Grid.Column="0" Text="Catalogue" FontSize="12" Padding="6" Clicked="OnCatalogClicked" />
+        <Button Grid.Column="1" Text="Commander" FontSize="12" Padding="6" Clicked="OnNewOrderClicked" />
+        <Button Grid.Column="2" Text="Commandes" FontSize="12" Padding="6" Clicked="OnOrdersClicked" />
+      </Grid>
+    </VerticalStackLayout>
+    <ScrollView Grid.Row="1"><VerticalStackLayout Padding="20,4,20,24" Spacing="14">
+      <Label x:Name="SectionTitle" Text="Notre catalogue" FontSize="22" FontAttributes="Bold" />
+      <Label x:Name="StatusMessage" Text="" TextColor="{StaticResource Primary}" />
+      <VerticalStackLayout x:Name="ContentArea" Spacing="12" />
+    </VerticalStackLayout></ScrollView>
+  </Grid>
+</ContentPage>
